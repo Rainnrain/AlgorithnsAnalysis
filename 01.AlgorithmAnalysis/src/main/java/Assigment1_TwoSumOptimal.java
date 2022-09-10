@@ -5,7 +5,7 @@ import java.util.Map;
 public class Assigment1_TwoSumOptimal {
     public static void main(String[] args) {
 
-        int[] array= new int[]{4,7,2,11};
+        int[] array= new int[]{6,7,3,11};
         System.out.println(Arrays.toString(twoSumOptimalSolution(array, 9)));
 
 
@@ -20,6 +20,7 @@ public class Assigment1_TwoSumOptimal {
             int potentialMatch=targetValue-array[i];
             if(map.containsKey(potentialMatch)) return new int[] {i, map.get(potentialMatch)};
             else map.put(array[i], i);
+
         }
         return new int[]{};
     }
