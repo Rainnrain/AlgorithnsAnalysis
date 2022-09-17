@@ -42,7 +42,6 @@ public class SunsetViews {
                 }
             }
         }
-        Collections.sort(buildingIndexes);
         return new ArrayList<>(buildingIndexes);
     }
 }
