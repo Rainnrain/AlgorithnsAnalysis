@@ -40,15 +40,13 @@ public class MySinglyLinkedList {
     void addFirst(int data) {
         //write code
         Node node = new Node(data);
-        Node current = head;
         if (isEmpty()) {
             tail = head = node;
-            size++;
         } else {
-            node.next = current;
+            node.next = head;
             head = node;
-            size++;
         }
+        size++;
     }
 
     void deleteById(int id) {
@@ -98,7 +96,7 @@ public class MySinglyLinkedList {
         }
     }
 
-    int getKthFromLast(int k) {
+    int getKthFromLast(int k) { //Doesn't implement two pointer solution
         Node current=head;
         Node secondCurrent=head;
 
@@ -109,9 +107,10 @@ public class MySinglyLinkedList {
           }
       }
 
-        return secondCurrent.id;}
+        return secondCurrent.id;
+    }
 
-        int getKthFromLast2(int k) {
+    int getKthFromLast2(int k) {
         int index=0;
         Node current=head;
         Node previous=head;
@@ -141,5 +140,87 @@ public class MySinglyLinkedList {
         }
      previous.next=current.next;
         current.next=null;
+    }
+
+    public int getKthFromLastFATIH(int k){
+        Node ptr1=head;
+        Node ptr2=head;
+        // move pointer2 k times, if you hit null before k times it means that
+        // there are less than k elements return -1
+        for(int i=0;i<k-1;i++) {
+            ptr2=ptr2.next;
+            if (ptr2==null)
+                return -1;
+        }
+        // now move both pointers together
+        while(ptr2.next!=null) {
+            ptr1=ptr1.next;
+            ptr2=ptr2.next;
+        }
+        return ptr1.id;
+    }
+
+    public void removeKthFromLastFatih(int k){
+
+        Node ptr1=head;
+        Node ptr2=head;
+        Node prev=null;
+
+        for(int i=0;i<k-1;i++) {
+            ptr2=ptr2.next;
+        }
+
+        while(ptr2.next!=null) {
+            prev=ptr1;
+            ptr1=ptr1.next;
+            ptr2=ptr2.next;
+        }
+
+        if(ptr1==head){
+            head=ptr1.next;
+            ptr1.next=null;
+            size--;
+
+        } else if(ptr1==tail){
+            tail = prev;
+            prev.next = null;
+            size--;
+        } else{
+            prev.next=ptr1.next;
+            ptr1.next=null;
+            size--;
+        }
+
+    }
+
+    public void removeKthFromLast2(int k){
+        Node ptr1=head;
+        Node ptr2=head;
+
+        for(int i=0;i<k-1;i++) {
+
+            ptr2=ptr2.next;
+
+            if (ptr2==null)  System.out.println("Less than k elements");
+
+            else if(ptr2.next==null){
+                head=ptr1.next;
+                ptr1.next=null;
+               return;
+            }
+        }
+
+        while(ptr2.next.next!=null) {
+
+            ptr1=ptr1.next;
+            ptr2=ptr2.next;
+
+        }
+
+       ptr1.next=ptr1.next.next;
+        ptr1=ptr1.next;
+       ptr1=null;
+
+
     }
 }

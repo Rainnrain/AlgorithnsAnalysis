@@ -7,7 +7,7 @@ public class SingleLinkeListApp {
         System.out.println(myList.isEmpty());
 
 
-        for (int i = 0; i <10 ; i++) {
+        for (int i = 0; i <5 ; i++) {
             myList.add(i);
         }
 //        myList.printNodes();
@@ -18,8 +18,12 @@ public class SingleLinkeListApp {
        myList.addFirst(123);
         myList.printNodes();
         System.out.println();
-        System.out.println(myList.getKthFromLast(5));
-        myList.removeKthFromLast(5);
+    //    System.out.println(myList.getKthFromLast(5));
+     //   myList.removeKthFromLast(5);
+        myList.printNodes();
+        System.out.println();
+        System.out.println(myList.getKthFromLastFATIH(4));
+       myList.removeKthFromLast2(3);
         myList.printNodes();
 
     }
