@@ -5,17 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>AlgorithnsAnalysis</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>dsa-06-AlgorithmProblems</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>02.CollectionsReview</module>
-        <module>dsa-07-Queue</module>
-    </modules>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
 </project>
