@@ -11,6 +11,7 @@
     <modules>
         <module>02.CollectionsReview</module>
         <module>dsa-07-Queue</module>
+        <module>dsa-08-Trees</module>
     </modules>
 
     <properties>

@@ -11,6 +11,7 @@ public class MySinglyLinkedList {
 
   void addFirst(int data){
       // create a new node object from data
+
       Node node=new Node(data);
      // case 1: list empty
       if(isEmpty()){
