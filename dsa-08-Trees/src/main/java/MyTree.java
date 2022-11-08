@@ -76,4 +76,33 @@ public class MyTree {
 
         }
     }
+
+    public boolean contains(int value){
+        if(root==null) return false;
+        TNode current=root;
+        while(current!=null){
+            if(value<current.value) current=current.leftChild;
+            else if(value>current.value) current=current.rightChild;
+            else return true;
+        }
+        return false;
+    }
+
+    public boolean isLeaf(TNode node){
+        return node.leftChild==null && node.rightChild==null;
+    }
+
+    public void printLeaves(TNode node){
+        if(root==null) return;
+        if(isLeaf(root)) System.out.print(root.value+", ");
+        printLeaves(root.leftChild);
+        printLeaves(root.rightChild);
+
+    }
+
+    public int countLeaves(TNode node){
+        if(root == null) return 0;
+        if(isLeaf(root)) return 1;
+        return countLeaves(root.leftChild)+ countLeaves(root.rightChild);
+    }
 }
