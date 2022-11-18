@@ -20,6 +20,16 @@ public class TreeApp {
 
         System.out.println(tree.contains(8));
 
+        tree.printLeaves(tree.root);
+        System.out.println();
+        System.out.println(tree.countLeaves(tree.root));
 
+        System.out.println(tree.findSumOfLeaves(tree.root));
+
+        System.out.println("Height of the tree"+ tree.height(tree.root));
+
+        System.out.println("Sum of Depth "+tree.sumOfDepth(tree.root));
+
+        System.out.println("Sum of Depth w/ Fatih"+ tree.calculateNodeDepthsSums());
     }
 }
