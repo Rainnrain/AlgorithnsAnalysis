@@ -168,4 +168,14 @@ public class MyTree {
         if(node==null) return 0;
         return sum+nodeSums(node.leftChild, node.value) + nodeDepthSums(node.rightChild, node.value);
     }
+
+
+    public int helper(int a, int b){
+       if(root.value>=a && root.value<=b) return rangeSum(root, root.value);
+       return -1;
+    }
+
+    public int rangeSum(TNode node, int sum){
+    return -1;
+    }
 }

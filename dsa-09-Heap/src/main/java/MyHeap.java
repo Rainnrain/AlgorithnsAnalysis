@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class MyHeap {
@@ -15,7 +16,7 @@ public class MyHeap {
     }
 
     public void insert(int value) {
-        if (size == items.length) throw new IllegalStateException();
+        if (size == items.length) throw new IllegalStateException(); // at max size cannot add any more
         else {
             items[size++] = value;
             bubbleUp();
@@ -25,8 +26,8 @@ public class MyHeap {
     public int remove(){
         if(size==0) throw new NoSuchElementException();
         else{
-            int result=items[0];
-            items[0]=items[--size];
+            int result=items[0]; // always remove the root
+            items[0]=items[--size]; // reassign last element to top
             bubbleDown();
             return result;
         }
@@ -35,7 +36,8 @@ public class MyHeap {
     public void bubbleDown(){
         int index=0;
         int largerChildIndex;
-        while(index<=size&& !isValidParent(index)){
+        while(index<=size&& !isValidParent(index)){// breaks if index is larger than size and if parent is larger than child
+                                                    // or if no left child
             largerChildIndex=largerChildIndex(index);
             swap(index, largerChildIndex);
             index=largerChildIndex;
@@ -43,12 +45,12 @@ public class MyHeap {
     }
 
     public boolean isValidParent(int index){
-        if(!hasLeftChild(index)) return true;
+        if(!hasLeftChild(index)) return true; // returns true if doesn't have left child
         else{
             boolean isValid=false;
             if(hasRightChild(index)){
                 isValid=(items[index]>=items[leftChildIndex(index)]&& items[index]>=items[rightChildIndex(index)]);
-            }
+            } // returns true if array parent value is greater than both the left and right array child
             return isValid;
         }
     }
@@ -66,16 +68,17 @@ public class MyHeap {
         return index*2+2;
     }
     public int largerChildIndex(int index){
-        if(!hasLeftChild(index)) return index;
-        else if(!hasRightChild(index)){
+        if(!hasLeftChild(index)) return index; // returns index if no left child
+        else if(!hasRightChild(index)){ // if there is no right child return left child index
             return leftChildIndex(index);
         }
         return items[leftChildIndex(index)]>items[rightChildIndex(index)]?leftChildIndex(index):rightChildIndex(index);
+        // returns either the right or left child index depending on what's higher in value.
     }
 
     public void bubbleUp(){
-        // calculate start point/ index
-        int index= size-1;
+
+        int index= size-1; // gets index of added value
         //while index >0 && parent is less than child continue...
         // 1. swap child and parent
         // 2. Switch to the next index
@@ -104,5 +107,13 @@ public class MyHeap {
             System.out.print(items[i]+", ");
         }
         System.out.println();
+    }
+
+
+    public void kThLargest(int k){
+
+     if( size<=k) return;
+
+        System.out.println("The "+ k +" largest value is: "+items[k-1]);
     }
 }
