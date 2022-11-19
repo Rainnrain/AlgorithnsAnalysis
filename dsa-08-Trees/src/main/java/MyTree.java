@@ -126,32 +126,32 @@ public class MyTree {
     }
 
 
-    public int sumOfDepth(TNode root) {
-        int sum = 0;
-        int count=0;
-
-        if (root == null) return 0;
-        Queue<TNode> queue = new LinkedList<>();
-
-        queue.add(root);
-
-        while (!queue.isEmpty()) {
-
-            TNode toVisit = queue.poll(); // gets front element of the queue
-            sum++;
-
-            if (toVisit.leftChild != null) {
-                queue.add(toVisit.leftChild);
-                sum += 1 ;
-            }
-            if (toVisit.rightChild != null) {
-                queue.add(toVisit.rightChild);
-                sum += 1  ;
-            }
-
-        }
-        return sum;
-    }
+//    public int sumOfDepth(TNode root) { Incorrect approach
+//        int sum = 0;
+//        int count=0;
+//
+//        if (root == null) return 0;
+//        Queue<TNode> queue = new LinkedList<>();
+//
+//        queue.add(root);
+//
+//        while (!queue.isEmpty()) {
+//
+//            TNode toVisit = queue.poll(); // gets front element of the queue
+//            sum++;
+//
+//            if (toVisit.leftChild != null) {
+//                queue.add(toVisit.leftChild);
+//                sum += 1 ;
+//            }
+//            if (toVisit.rightChild != null) {
+//                queue.add(toVisit.rightChild);
+//                sum += 1  ;
+//            }
+//
+//        }
+//        return sum;
+//    }
 
     public int calculateNodeDepthsSums(){
         return nodeDepthSums(root, 0);
