@@ -170,12 +170,13 @@ public class MyTree {
     }
 
 
-    public int helper(int a, int b){
-       if(root.value>=a && root.value<=b) return rangeSum(root, root.value);
-       return -1;
+    public int rangeSum(TNode node, int low, int high){
+        int sum=0;
+        if(node==null) return 0;
+        if(root.value>=low && root.value<=high) {
+            sum+= node.value;
+        return sum + rangeSum(node.leftChild,  low,  high)+ rangeSum(node.rightChild, low, high);
     }
-
-    public int rangeSum(TNode node, int sum){
-    return -1;
+        return sum+ rangeSum(node.leftChild,  low,  high)+ rangeSum(node.rightChild, low, high);
     }
 }
