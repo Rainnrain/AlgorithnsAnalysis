@@ -162,10 +162,10 @@ public class MyTree {
     }
 
     public int calculateNodeSums(){
-        return nodeDepthSums(root, root.value);
+        return nodeSums(root, root.value);
     }
-    public int nodeSums(TNode node, int a){
+    public int nodeSums(TNode node, int sum){
         if(node==null) return 0;
-        return a+nodeDepthSums(node.leftChild, node.leftChild.value) + nodeDepthSums(node.rightChild, node.rightChild.value);
+        return sum+nodeSums(node.leftChild, node.value) + nodeDepthSums(node.rightChild, node.value);
     }
 }

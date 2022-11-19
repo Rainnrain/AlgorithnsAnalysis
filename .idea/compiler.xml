@@ -11,7 +11,11 @@
         <module name="dsa-06-AlgorithmProblems" />
         <module name="02.CollectionsReview" />
         <module name="dsa-07-Queue" />
+        <module name="dsa-09-Heap" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Heap" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
