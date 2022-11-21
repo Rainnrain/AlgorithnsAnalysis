@@ -179,4 +179,16 @@ public class MyTree {
     }
         return sum+ rangeSum(node.leftChild,  low,  high)+ rangeSum(node.rightChild, low, high);
     }
+
+
+    public boolean sameTree(TNode p, TNode q){
+        boolean same=false;
+        while(root==null||p.value==q.value){
+           sameTree( p.leftChild, q.leftChild);
+           sameTree(p.rightChild, q.rightChild);
+        }
+
+        if(root==null) same=true;
+        return same;
+    }
 }
