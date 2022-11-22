@@ -28,7 +28,7 @@ public class TreeApp {
 
         System.out.println("Height of the tree"+ tree.height(tree.root));
 
-        System.out.println("Sum of Depth "+tree.sumOfDepth(tree.root));
+       // System.out.println("Sum of Depth "+tree.sumOfDepth(tree.root));
 
         System.out.println("Sum of Depth w/ Fatih "+ tree.calculateNodeDepthsSums());
         System.out.println("Sum  w/ Fatih "+ tree.calculateNodeSums());

@@ -181,14 +181,22 @@ public class MyTree {
     }
 
 
-    public boolean sameTree(TNode p, TNode q){
-        boolean same=false;
-        while(root==null||p.value==q.value){
-           sameTree( p.leftChild, q.leftChild);
-           sameTree(p.rightChild, q.rightChild);
-        }
+    public boolean isSameTree(TNode p, TNode q) {
+        boolean same=true;
 
-        if(root==null) same=true;
-        return same;
+        if(p==null && q== null){
+            return same;
+
+        }
+        if(p==null || q==null){
+            return same= false;
+        }
+        if(q.value!=p.value ){
+            return same= false;}
+
+
+        return isSameTree( p.leftChild, q.leftChild)&&
+                isSameTree(p.rightChild, q.rightChild);
+
     }
 }
