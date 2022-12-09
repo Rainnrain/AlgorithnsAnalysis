@@ -12,8 +12,8 @@
         <module>02.CollectionsReview</module>
         <module>dsa-07-Queue</module>
         <module>dsa-08-Trees</module>
-        <module>Heap</module>
         <module>dsa-09-Heap</module>
+        <module>dsa-10-Search</module>
     </modules>
 
     <properties>

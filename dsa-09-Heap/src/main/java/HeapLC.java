@@ -14,12 +14,12 @@ public class HeapLC {
 
     public static void main(String[] args) {
 
-        int[] nums = {3,2,3,1,2,4,5,5,6};
+        int[] nums = {6,5,4,3,2,1};
 
 
-        findItemKth(nums, 4);
-        System.out.println( findKthLargest(nums, 4));
-        System.out.println(findKthLargestItem(nums, 4));
+        //findItemKth(nums, 4);
+        System.out.println( findKthLargest(nums, 2));
+      //  System.out.println(findKthLargestItem(nums, 4));
 
     }
 

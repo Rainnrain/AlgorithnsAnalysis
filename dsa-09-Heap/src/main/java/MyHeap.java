@@ -36,7 +36,7 @@ public class MyHeap {
     public void bubbleDown(){
         int index=0;
         int largerChildIndex;
-        while(index<=size&& !isValidParent(index)){// breaks if index is larger than size and if parent is larger than child
+        while(index<=size&& !isValidParent(index)){// breaks if index is larger than size and if parent val is larger than child
                                                     // or if no left child
             largerChildIndex=largerChildIndex(index);
             swap(index, largerChildIndex);
