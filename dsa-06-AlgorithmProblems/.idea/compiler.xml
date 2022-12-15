@@ -6,20 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="01.AlgoAnalysis" />
         <module name="dsa-06-AlgorithmProblems" />
-        <module name="dsa-07-Queue" />
-        <module name="dsa-09-Heap" />
-        <module name="Stacks" />
-        <module name="dsa-08-Trees" />
-        <module name="dsa-10-Search" />
-        <module name="02.CollectionsReview" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="01.AlgorithmAnalysis" target="11" />
-      <module name="CollectionsReview" target="11" />
-      <module name="Heap" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>
