@@ -10,6 +10,7 @@
         <module name="dsa-06-AlgorithmProblems" />
         <module name="dsa-07-Queue" />
         <module name="dsa-09-Heap" />
+        <module name="dsa-11-Sorting" />
         <module name="Stacks" />
         <module name="dsa-08-Trees" />
         <module name="dsa-10-Search" />
